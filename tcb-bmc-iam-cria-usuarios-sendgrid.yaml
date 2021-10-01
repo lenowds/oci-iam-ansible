@@ -1,0 +1,9 @@
+- name: Send mail
+  community.general.sendgrid:
+    api_key: "{{ lookup('env', 'SENDGRID_API_KEY') }}"
+    from_address: "{{ lookup('env', 'SENDGRID_SEND_MAIL') }}"
+    to_addresses:
+      - "{{ item }}{{ dominio }}"
+    subject: "Account create success."
+    body: "The most recent Ansible deployment was successful. Your login is {{ item }} and secret key: {{ user_password }}."
+  delegate_to: localhost
