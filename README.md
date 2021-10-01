@@ -8,10 +8,12 @@ Para envio de e-mail será utilizado a integração Ansible + SendGrid. É neces
 \- Criar os compartimentos
 
 - RecursosRedes
-
 - RecursosCompute
-
 - RecursosDB
+
+-Instalar a bibliotéca python sendgrid
+
+- pip install sendgrid==1.6.22
 
   
 
